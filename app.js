@@ -18,7 +18,7 @@ app.post("/", function(req, res){
     query = query.slice(0,1).toUpperCase() + query.slice(1);
 
     const appkey = process.env.OPENWEATHER_API_KEY;
-    const url = "https://api.openweathermap.org/data/2.5/weather?q="+ query +"&appid="+ appkey +"&units=metric";
+    const url = "https://api.openweathermap.org/data/2.5/weather?q="+ query +"&appid="+ appkey.toString() +"&units=metric";
 
     https.get(url, function(response){
         if(response.statusCode === 200){ 
