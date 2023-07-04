@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherLive</title>
+    <style>
+        html, body{
+            padding: 0;
+            margin: 0;
+        }
+        #tittle{
+            text-align: center;
+            background-color: #5c5c5c;
+            font-size: 4em;
+            color: white;
+            padding-top: 0.6em;
+            padding-bottom: 0.5em;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 800;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            margin-top:5rem;
+        }
+        form input{
+            width: 15rem;
+            height: 50px;
+            border-radius: 8px;
+            background-color: #d9d9d9;
+            border: none;
+            padding-left: 25px;
+            font-size: 1em;
+        }
+        form button{
+            width: 50px;
+            background-color: #bcdd69;
+            border: none;
+            border-radius: 8px;
+            margin-left: 20px;
+        }
+        form button img{
+            width: 30px;
+        }
+        .card{
+            background-color: #bcdd69;
+            width: 100%;
+            height:23rem;
+            margin-top: 5rem;
+            justify-content: center;
+            text-align: center;
+        }
+        #city{
+            font-size: 4rem;
+            margin-bottom: 0;
+            margin-top: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 400;
+        }
+        #tmp{
+            margin : 0;
+            padding: 0;
+            font-size: 6rem;
+            margin: 0;
+            color: #000000;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 800;
+        }
+        .card img{
+            margin: 0;
+            padding-top: 5rem;
+            width: 5rem;
+        }
+        #weath{
+            color: #000000;
+            margin-top: 0;
+        }
+        footer{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            background-color: rgb(122, 122, 122);
+            color: white;
+        }
+        @media only screen and (max-width : 600px) {
+            #city{
+                font-size: 3.5rem;
+            }
+            .card{
+                height: 17rem;
+            }
+            .card img{
+                padding-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="tittle"><span>WeatherLive</span></section>
+    <form action="/" method="post">
+        <input type="text" class="item" placeholder="Enter the name of city" name="cityname">
+        <button type="sumbit" class="item"><img src="/images/search.png" alt=""></button>
+    </form>
+    <div class="card">
+        <img id="icon" src="<%= icon %>" alt="">
+        <span id="tmp"><%= temperature %>°</span>
+        <h1 id="city"><%= place %>, <%= ctry %></h1>
+        <p id="weath"><%= description %></p>
+    </div>
+    <footer>
+        <p>Copyright @Debu</p>
+    </footer>
+</body>
+</html>
